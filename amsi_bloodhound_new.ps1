@@ -27,4 +27,3 @@ write-host "Import and Execution of SharpHound.ps1 from c:\test" -ForegroundColo
 import-module c:\test\SharpHound.ps1
 Invoke-BloodHound -OutputDirectory $env:Temp
 Remove-Item $env:Temp\*BloodHound.zip -Force
-
