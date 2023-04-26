@@ -1,4 +1,4 @@
-$exec_dll = "kernel32"
+$exec_dll = "kernel32" 
 $line1 = "using System;"
 $line2 = "using System.Runtime.InteropServices;"
 $line3 = "public class Win32 {"
